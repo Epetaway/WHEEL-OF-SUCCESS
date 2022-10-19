@@ -34,7 +34,7 @@ $('#start-btn, #restart-btn-win, #restart-btn-lose').click((event) => { // Liste
 
     }
   }
-  // console.log(phraseSplit);
+  console.log(phraseSplit);
 });
 
 
