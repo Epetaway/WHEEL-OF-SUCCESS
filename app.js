@@ -1,4 +1,4 @@
-const phraseList = ["The best of both worlds","Speak of the devil","See eye to eye","Once in a blue moon","When pigs fly", "To cost an arm and a leg","A piece of cake","Let the cat out of the bag","To feel under the weather","To kill two birds with one stone"];
+const phraseList = ["Happiness","Indulgence","Gravity","Genius","Discover","Memorable","Extraordinary","Beautiful","Undeniable","Hack","Breathtaking","Unforgettable","Latest","Dazzling"];
 
 let phrase = "";
 let lives = "";
@@ -12,7 +12,7 @@ $('#overlay.lose, #overlay.win').hide();
 
 $('#start-btn, #restart-btn-win, #restart-btn-lose').click((event) => { // Listens for click functionon start button and calls getPhrase and displays the phrase
   lives = 5;
-  console.log('click');
+  // console.log('click');
   $('ul').empty();
   $('button.chosen').removeClass('chosen');
   $('#overlay.lose, #overlay.win, #overlay.start').hide();
@@ -34,7 +34,7 @@ $('#start-btn, #restart-btn-win, #restart-btn-lose').click((event) => { // Liste
 
     }
   }
-  console.log(phraseSplit);
+  // console.log(phraseSplit);
 });
 
 
@@ -46,18 +46,25 @@ $('#start-btn, #restart-btn-win, #restart-btn-lose').click((event) => { // Liste
 
 let getPhrase = () => { //Gets a randomphrase from phrase list
   phrase = phraseList[Math.floor((Math.random() * 9) + 1)];
-  console.log(Math.floor((Math.random() * 9) + 1));
+  // console.log(Math.floor((Math.random() * 9) + 1));
   let phraseSplit = phrase.split('');
   return phraseSplit;
-
+  phraseSplit == phraseSplit;
 }
 
 $('#qwerty button').click(function(event) {
   checkLetter($(this).text());
   $(this).addClass('chosen');
+  // console.log(stringArray);
    if (lives == 0){
     $('.lose').show();
+    $('ul').empty();
     $('button').removeClass('chosen');
+  }
+  if ($('li.correct').length == stringArray.length) {
+    // console.log("you win");
+    $('.win').show();
+    $('ul').empty();
   }
 
 });
@@ -71,7 +78,7 @@ let checkLetter = (letter) => { //Check if letter is in phrase and show on board
   let idx = stringArray.map(stringArray => stringArray.toLowerCase());
     idx = idx.indexOf(letter);
     if (idx === -1) {
-      console.log('wrong');
+      // console.log('wrong');
       let tries = $('li.tries img');
       let arrayNum = lives -1;
   // console.log(tries[lives - 1]);
@@ -82,8 +89,8 @@ let checkLetter = (letter) => { //Check if letter is in phrase and show on board
       correct.push(idx);
       for(var i =0; i < correct.length; i++){
         let selector = "." + correct[i];
+        $(selector).addClass('show correct animate__animated animate__tada').html(letter);
 
-        $(selector).addClass('show animate__animated animate__tada').html(letter);
 
       }idx = stringArray.indexOf(letter, idx + 1);
 

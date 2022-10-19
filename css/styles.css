@@ -88,7 +88,7 @@ button {
   border-radius: 5px;
   margin: 0.5rem;
 }
-.letter.0{
+ li:first-child{
   text-transform: uppercase !important;
 }
 
@@ -99,7 +99,7 @@ button {
 .show {
   color: #000;
   background-color: #76CE82;
-  
+
 }
 
 /* Keyboard */
