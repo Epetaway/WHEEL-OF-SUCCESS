@@ -59,9 +59,9 @@ No setup required — just a browser!
 
 1. Clone the repository:
 
-   ```bash
+  bash
    git clone https://github.com/Epetaway/WHEEL-OF-SUCCESS.git
-````
+
 
 2. Open the folder:
 
